@@ -2,6 +2,8 @@
 
 ## Requirements
 
+on mac
+
 ```
 v install ui
 ```

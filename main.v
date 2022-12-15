@@ -1,5 +1,3 @@
-module main
-
 import ui.webview
 import ui
 
@@ -20,6 +18,51 @@ fn main() {
 		width: 800
 		height: 100
 		title: 'V ui.webview demo'
+		children: [
+			ui.row(
+				// stretch: true
+				margin_: 10
+				height: 100
+				children: [
+					ui.button(
+						text: 'Open'
+						width: 70
+						height: 100
+						on_click: app.btn_open_click
+					),
+					ui.button(
+						text: 'Navigate to google'
+						on_click: fn (b &ui.Button) {
+							// println("on_click google")
+							// app.webview.navigate("https://google.com")
+						}
+					),
+					ui.button(
+						text: 'Navigate to steam'
+						on_click: fn (b &ui.Button) {
+							// println("on_click steam")
+							// app.webview.navigate("https://steampowered.com")
+						}
+					),
+					ui.button(
+						text: 'Rig on_navigate'
+						on_click: fn (b &ui.Button) {
+							// println("on_click rig")
+							// app.webview.on_navigate(fn (url string) {
+							// 	exit(0)
+							// })
+						}
+					),
+					ui.button(
+						text: 'Run javascript'
+						on_click: fn (b &ui.Button) {
+							// println("on_click javascript")
+							// app.webview.exec("alert('Ran some javascript')")
+						}
+					),
+				]
+			),
+		]
 	)
 	ui.run(window)
 }
